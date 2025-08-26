@@ -1,0 +1,81 @@
+/* Container for centering content */
+.recipe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px; /* same as p-6 */
+  min-height: 100vh; /* full screen height */
+  background-color: #f9fafb; /* light gray background */
+}
+
+/* Card */
+.recipe-card {
+  max-width: 42rem; /* same as max-w-2xl */
+  background-color: #ffffff;
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  padding: 24px; /* p-6 */
+  text-align: left;
+}
+
+/* Title */
+.recipe-card h2 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  color: #1f2937; /* text-gray-800 */
+}
+
+/* Description & Tech Stack */
+.recipe-card p {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Key Highlights Header */
+.recipe-card h3 {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: #374151; /* text-gray-700 */
+}
+
+/* List items */
+.recipe-card ul {
+  list-style: disc inside;
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.recipe-card ul li {
+  margin-bottom: 0.5rem; /* space-y-2 */
+}
+
+/* Buttons */
+.recipe-card .buttons {
+  display: flex;
+  gap: 16px; /* gap-4 */
+  margin-bottom: 1.5rem;
+}
+
+.recipe-card .buttons a {
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  color: #374151; /* text-gray-700 */
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.recipe-card .buttons a:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+/* Hashtags */
+.recipe-card .hashtags {
+  margin-top: 1.5rem; /* mt-6 */
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* text-gray-500 */
+}
