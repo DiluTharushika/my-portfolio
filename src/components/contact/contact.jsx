@@ -12,10 +12,26 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your message has been sent.`);
-    setFormData({ name: "", email: "", message: "" });
+
+    try {
+      const response = await fetch("https://formsubmit.co/dilutharushika02@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert(" Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // clear form
+      } else {
+        alert(" Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -59,6 +75,7 @@ const Contact = () => {
               onChange={handleChange}
               required
             ></textarea>
+
             <button type="submit">Send Message</button>
           </form>
         </div>
