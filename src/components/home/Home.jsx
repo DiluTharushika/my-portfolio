@@ -9,12 +9,36 @@ import "aos/dist/aos.css";
 const Home = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // speed
-      once: false,    // animations trigger on every scroll
-      mirror: true,   // animate again when scrolling back
-      easing: "ease-in-out", // smoother effect
+      duration: 1200,
+      once: false,
+      mirror: true,
+      easing: "ease-in-out",
     });
   }, []);
+
+  // Download CV with file check
+  const handleDownloadCV = async () => {
+    try {
+      const response = await fetch("public/DiluTharushika-cv.pdf");
+      if (!response.ok) {
+        alert("CV file is not available on the site.");
+        return;
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "DiluTharushika-CV.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+      // Optional success message
+      // alert("CV downloaded successfully!");
+    } catch (error) {
+      alert("Error downloading the CV.");
+    }
+  };
 
   return (
     <div className="home" id="home">
@@ -42,17 +66,16 @@ const Home = () => {
         </p>
 
         {/* Download CV Button */}
-        <a
-          href="/cv.pdf"
-          download
+        <button
+          onClick={handleDownloadCV}
           className="btn"
           data-aos="flip-left"
           data-aos-delay="700"
         >
           Download CV
-        </a>
+        </button>
 
-        {/* ✅ Social Icons with staggered animations */}
+        {/* Social Icons */}
         <div className="social-icons">
           <a
             href="https://www.linkedin.com/in/dilutharushika"
