@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./skill.css";
 
-// Import your own images from assets folder
 import jsImg from "../../assets/js.png";
 import javaImg from "../../assets/java.png";
 import sqlImg from "../../assets/mysql.png";
@@ -23,6 +22,9 @@ import canvaImg from "../../assets/canva.png";
 import problemImg from "../../assets/problem1.png";
 import teamworkImg from "../../assets/team.png";
 import timeImg from "../../assets/time.png";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Define categories with skills
 const skillCategories = {
@@ -46,8 +48,7 @@ const skillCategories = {
   ],
   Design: [
     { name: "Figma", icon: figmaImg },
-     { name: "Canva", icon: canvaImg },
-    
+    { name: "Canva", icon: canvaImg },
   ],
   "Soft Skills": [
     { name: "Problem Solving", icon: problemImg },
@@ -59,16 +60,25 @@ const skillCategories = {
 const Skill = () => {
   const [activeCategory, setActiveCategory] = useState("Programming Languages");
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <section className="skills" id="skills">
-      <div className="skills-container">
-        <h2>My Skills</h2>
-        <p>
+      <div className="skills-container" data-aos="fade-up">
+        <h2 data-aos="fade-up">My Skills</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
           Here are some of my skills, grouped into categories.
         </p>
 
         {/* Tabs */}
-        <div className="skill-tabs">
+        <div className="skill-tabs" data-aos="fade-up" data-aos-delay="400">
           {Object.keys(skillCategories).map((category, index) => (
             <button
               key={index}
@@ -83,7 +93,12 @@ const Skill = () => {
         {/* Skills List */}
         <div className="skills-list">
           {skillCategories[activeCategory].map((skill, index) => (
-            <div className="skill-item" key={index}>
+            <div
+              className="skill-item"
+              key={index}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100} // staggered animation
+            >
               <img src={skill.icon} alt={skill.name} className="skill-icon" />
               <span>{skill.name}</span>
             </div>

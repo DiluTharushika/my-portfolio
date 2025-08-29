@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./certificate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import cert1 from "../../assets/AI.jpg";
 import cert2 from "../../assets/javaIntro.jpg";
 import cert3 from "../../assets/javaIntermediate.png";
@@ -12,12 +15,20 @@ const certificates = [
   { title: "Java Introduction", issuer: "SoloLearn", category: "Java", image: cert2 },
   { title: "Java Intermediate", issuer: "SoloLearn", category: "Java", image: cert3 },
   { title: "Introduction to SQL", issuer: "SoloLearn", category: "Databases", image: cert4 },
-  // Add more certificates as needed
 ];
 
 const Certificate = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedCert, setSelectedCert] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      easing: "ease-in-out",
+    });
+  }, []);
 
   const filteredCertificates =
     selectedCategory === "All"
@@ -26,11 +37,11 @@ const Certificate = () => {
 
   return (
     <section className="certificates" id="certificates">
-      <div className="certificates-container">
-        <h2>My Certificates</h2>
+      <div className="certificates-container" data-aos="fade-up">
+        <h2 data-aos="fade-up">My Certificates</h2>
 
         {/* Category Filters */}
-        <div className="cert-categories">
+        <div className="cert-categories" data-aos="fade-up" data-aos-delay="200">
           {categories.map((cat, index) => (
             <button
               key={index}
@@ -49,6 +60,8 @@ const Certificate = () => {
               className="certificate-card"
               key={index}
               onClick={() => setSelectedCert(cert)}
+              data-aos="zoom-in"
+              data-aos-delay={index * 150}
             >
               <img src={cert.image} alt={cert.title} />
               <h3>{cert.title}</h3>

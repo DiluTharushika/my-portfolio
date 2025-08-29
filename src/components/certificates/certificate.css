@@ -1,7 +1,7 @@
 /* Certificates Section */
 .certificates {
   padding: 80px 70px;
-  background: linear-gradient(180deg, #0a0f1e, #001f3f); /* Dark gradient background */
+  background: linear-gradient(180deg, #0a0f1e, #001f3f);
   color: #f8fafc;
 }
 
@@ -16,7 +16,7 @@
   margin-bottom: 40px;
   font-weight: 700;
   letter-spacing: 1px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Blue glowing gradient */
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -49,12 +49,12 @@
 }
 
 .cert-categories button.active {
-  background: linear-gradient(90deg, #9f7aea, #00c6ff); /* Purple → Blue */
+  background: linear-gradient(90deg, #9f7aea, #00c6ff);
   color: #fff;
   box-shadow: 0 0 18px rgba(159, 122, 234, 0.8);
 }
 
-/* Certificates List - One Row */
+/* Certificates List - Horizontal Scroll */
 .certificates-list {
   display: flex;
   flex-wrap: nowrap;
@@ -77,10 +77,10 @@
   border-radius: 20px;
 }
 
-/* Modern Card Style */
+/* Certificate Card */
 .certificate-card {
   flex: 0 0 280px;
-  background: rgba(255, 255, 255, 0.06); /* Glassy transparent card */
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   padding: 18px;
   border-radius: 20px;
@@ -88,6 +88,8 @@
   border: 1px solid rgba(0, 198, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .certificate-card img {
@@ -103,7 +105,7 @@
 .certificate-card h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #9f7aea, #00c6ff); /* Purple → Blue */
+  background: linear-gradient(90deg, #9f7aea, #00c6ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -146,10 +148,6 @@
   max-height: 90%;
   border-radius: 12px;
   box-shadow: 0 0 40px rgba(0, 198, 255, 0.6);
-}
-
-.certificate-modal.close-area {
-  cursor: pointer;
 }
 
 /* Responsive */

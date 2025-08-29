@@ -1,4 +1,4 @@
-/* Home section container */
+/* Home Section */
 .home {
   position: relative;
   display: flex;
@@ -9,67 +9,53 @@
   background: url("../../assets/bg.jpeg") no-repeat center center/cover;
   gap: 10px;
   z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
 }
 
 /* Left side text */
 .home-text {
   flex: 1;
+  max-width: 600px;
 }
 
+/* Heading Styles */
 .home-text h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Blue gradient */
-  background-clip: text; /* ✅ Standard */
-  -webkit-background-clip: text; /* ✅ Safari/Chrome */
-  color: transparent; /* Standard way */
-  -webkit-text-fill-color: transparent; /* Safari */
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideInLeft 1s ease both;
+}
+
+.home-text h1 .highlight {
+  background: linear-gradient(90deg, #9f7aea, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(159, 122, 234, 0.6);
 }
 
 .home-text h2 {
   font-size: 1.5rem;
   margin-bottom: 25px;
-  background: linear-gradient(90deg, #9f7aea, #00c6ff); /* Purple → Blue */
-  background-clip: text; /* ✅ Standard */
-  -webkit-background-clip: text; /* ✅ Safari/Chrome */
-  color: transparent;
+  background: linear-gradient(90deg, #9f7aea, #00c6ff);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: zoomIn 1.2s ease both;
+  animation-delay: 0.3s;
 }
-
 
 .home-text p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #d1d5db; /* Light grey for readability */
+  color: #d1d5db;
   max-width: 500px;
+  animation: fadeInUp 1.2s ease both;
+  animation-delay: 0.5s;
 }
 
-/* Right side photo */
-.photo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.photo img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position:center top;
-  transform: scale(0.85);
-  border: 5px solid #00c6ff; /* glowing blue */
-  box-shadow: 0 0 25px rgba(0, 198, 255, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo img:hover {
-  transform: scale(0.9);
-  box-shadow: 0 0 40px rgba(0, 198, 255, 0.9);
-}
-
-/* Button */
+/* Download CV Button */
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -82,6 +68,8 @@
   color: #fff;
   box-shadow: 0 0 15px rgba(0, 114, 255, 0.6);
   transition: all 0.3s ease;
+  animation: fadeInUp 1.2s ease both;
+  animation-delay: 0.9s;
 }
 
 .btn:hover {
@@ -90,7 +78,7 @@
   transform: translateY(-2px);
 }
 
-/* ✅ Social Icons */
+/* Social Icons */
 .social-icons {
   margin-top: 50px;
   display: flex;
@@ -99,40 +87,127 @@
 
 .social-icons a {
   font-size: 1.8rem;
-  color: #cbd5e1; /* Light gray */
-  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+  color: #cbd5e1;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+  transform: translateY(0);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
+/* Staggered delays */
+.social-icons a:nth-child(1) { animation-delay: 1.0s; }
+.social-icons a:nth-child(2) { animation-delay: 1.2s; }
+.social-icons a:nth-child(3) { animation-delay: 1.4s; }
+.social-icons a:nth-child(4) { animation-delay: 1.6s; }
+
+/* Hover & Glow */
 .social-icons a:hover {
-  color: #00c6ff;
-  text-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
-  transform: translateY(-3px);
+  transform: translateY(-6px) scale(1.2);
+  color: #fff;
+  animation: pulse 1s infinite;
 }
 
-/* Responsive for tablets and mobiles */
+.social-icons a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #9f7aea, #00c6ff);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: -1;
+  transform: scale(0.7);
+}
+
+.social-icons a:hover::before {
+  opacity: 0.6;
+  transform: scale(1.2);
+  filter: blur(8px);
+}
+
+/* Right side photo */
+.photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 1.2s ease both;
+  animation-delay: 0.7s;
+}
+
+.photo img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(0.85);
+  border: 5px solid #00c6ff;
+  box-shadow: 0 0 25px rgba(0, 198, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo img:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 40px rgba(0, 198, 255, 0.9);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: translateY(-6px) scale(1.2); }
+  50% { transform: translateY(-8px) scale(1.25); }
+  100% { transform: translateY(-6px) scale(1.2); }
+}
+
+/* Responsive */
 @media (max-width: 992px) {
   .home {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .social-icons {
     justify-content: center;
     gap: 25px;
   }
-  
+
   .photo {
-    justify-content: center;
     margin-top: 30px;
   }
 
   .photo img {
     width: 220px;
     height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    transform: scale(0.85);
     border: 4px solid #00c6ff;
   }
 }

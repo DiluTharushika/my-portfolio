@@ -3,12 +3,12 @@
   padding: 80px 20px;
   background: linear-gradient(180deg, #0a0f1e, #001f3f); /* Dark gradient */
   color: #f8fafc;
+  text-align: center;
 }
 
 .projects-container {
   max-width: 1200px;
   margin: auto;
-  text-align: center;
 }
 
 .projects-container h2 {
@@ -20,6 +20,8 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .projects-list {
@@ -36,9 +38,12 @@
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 198, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   text-align: center;
   border: 1px solid rgba(0, 198, 255, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: zoomIn 0.8s ease forwards;
 }
 
 .project-card img {
@@ -48,6 +53,17 @@
   border-radius: 12px;
   margin-bottom: 15px;
   box-shadow: 0 0 12px rgba(0, 198, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 198, 255, 0.5);
+  background: linear-gradient(145deg, #0072ff, #1e1333);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
 }
 
 .project-card h3 {
@@ -89,11 +105,24 @@
   transform: translateY(-2px);
 }
 
-/* Hover effect for cards */
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(0, 198, 255, 0.5);
+/* Animations Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Staggered animation delay for project cards */
+.projects-list .project-card:nth-child(1) { animation-delay: 0.2s; }
+.projects-list .project-card:nth-child(2) { animation-delay: 0.4s; }
+.projects-list .project-card:nth-child(3) { animation-delay: 0.6s; }
+.projects-list .project-card:nth-child(4) { animation-delay: 0.8s; }
+.projects-list .project-card:nth-child(5) { animation-delay: 1s; }
+.projects-list .project-card:nth-child(6) { animation-delay: 1.2s; }
 
 /* Responsive */
 @media (max-width: 768px) {

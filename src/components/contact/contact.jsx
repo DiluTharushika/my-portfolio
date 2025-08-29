@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./contact.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,15 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      easing: "ease-in-out",
+    });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,10 +34,10 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        alert(" Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // clear form
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        alert(" Failed to send message. Please try again.");
+        alert("Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error(error);
@@ -36,13 +47,15 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
-      <div className="contact-container">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out to me for collaborations, projects, or inquiries.</p>
+      <div className="contact-container" data-aos="fade-up">
+        <h2 data-aos="fade-up">Contact Me</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+          Feel free to reach out to me for collaborations, projects, or inquiries.
+        </p>
 
         <div className="contact-content">
           {/* Contact Details */}
-          <div className="contact-info">
+          <div className="contact-info" data-aos="fade-right" data-aos-delay="300">
             <h3>Get in Touch</h3>
             <p>Email: dilutharushika02@gmail.com</p>
             <p>Phone: +94 77 211 3068</p>
@@ -50,7 +63,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-left" data-aos-delay="300">
             <input
               type="text"
               name="name"
@@ -76,7 +89,7 @@ const Contact = () => {
               required
             ></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" className="contact-btn">Send Message</button>
           </form>
         </div>
       </div>
