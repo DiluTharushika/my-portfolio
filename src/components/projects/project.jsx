@@ -17,7 +17,7 @@ const projects = [
   { title: "AI-Powered Recipe App", description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.", image: recipeImg, path: "/recipe" },
   { title: "Pharmacy Management System", description: "A web-based system for managing prescriptions, order processing, and billing with role-based access control.", image: pharmacyImg, path: "/pharmacy" },
   { title: "Mini Games Collection", description: "A collection of interactive mini-games designed to enhance logical thinking and provide an engaging user experience.", image: gamesImg, path: "/game" },
-  { title: "Café Management System", description: "A desktop application to streamline café operations including order management, billing, and inventory tracking.", image: cafeImg, path: "/cafe" },
+  { title: "Café Management System(UI Design)", description: "A desktop application to streamline café operations including order management, billing, and inventory tracking.", image: cafeImg, path: "/cafe" },
   { title: "Film Hall Interface (UI Design)", description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering options.", image: filmImg, path: "/film" },
   { title: "Smart To-Do App", description: "A mobile application designed to help users organize tasks, set priorities, and track daily progress with a simple and intuitive interface.", image: todoImg, path: "/todo" },
 ];

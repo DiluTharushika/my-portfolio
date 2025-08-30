@@ -7,46 +7,42 @@ const Cafe = () => {
       <div className="recipe-card">
         {/* Project Title */}
         <h2>
-          AI-Powered Smart Recipe App! 
+         Cafe Mnagement System (UI Design)
         </h2>
 
         {/* Description */}
-        <p>
-          Excited to share my latest project — a mobile app that brings
-          intelligence and personalization into everyday cooking!
-        </p>
+        {/* Description */}
+<p>
+  Excited to share my latest project — a Cafe Management System UI that brings
+  sleek design and intuitive user experience to cafe operations!
+</p>
 
-        {/* Key Highlights */}
-        <h3> Key Highlights:</h3>
-        <ul>
-          <li> Add own ingredients, and the app will generate unique new recipes using AI</li>
-          <li> Get personalized recipe suggestions based on your preferences (cuisine, diet, meals per day)</li>
-          <li> Receive an estimated cost for each recipe</li>
-          <li> Built with React Native, powered by Groq + LLaMA 3, and integrated with Firestore</li>
-        </ul>
+{/* Key Highlights */}
+<h3> Key Highlights:</h3>
+<ul>
+  <li> Browse and visualize cafe menu items with an elegant interface</li>
+  <li> Track orders and reservations through a clean and interactive UI</li>
+  <li> View sales summaries and analytics in easy-to-read dashboards</li>
+  <li> Built with React (or React Native for mobile) focusing on responsive and modern design</li>
+</ul>
 
-        {/* Tech Stack */}
-        <p>
-          This app is designed to make recipe discovery smarter, budget-friendly, and truly user-driven.
-        </p>
+{/* Tech Stack */}
+<p>
+  This UI is designed to make cafe management intuitive, visually appealing, and user-friendly.
+</p>
+
 
         {/* Buttons */}
         <div className="buttons">
           <a
-            href="https://lnkd.in/er7beMhr"
+            href="https://www.figma.com/design/GkA4LQDvr2JLZn3K4UE58E/Untitled?node-id=27-303&t=QlwjafgclQAMCF5H-1"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            Figma
           </a>
 
-          <a
-            href="https://www.linkedin.com/feed/update/urn:li:activity:123456789/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
+         
         </div>
 
        
