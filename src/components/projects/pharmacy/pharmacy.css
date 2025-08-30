@@ -5,7 +5,7 @@
   align-items: center;
   padding: 24px; /* same as p-6 */
   min-height: 100vh; /* full screen height */
-  background-color: #f9fafb; /* light gray background */
+    background:linear-gradient(180deg, #0a0f1e, #001f3f); /* light gray background */
 }
 
 /* Card */

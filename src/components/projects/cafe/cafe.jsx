@@ -7,7 +7,7 @@ const Cafe = () => {
       <div className="recipe-card">
         {/* Project Title */}
         <h2>
-         Cafe Mnagement System (UI Design)
+         Cafe Management System (UI Design)
         </h2>
 
         {/* Description */}

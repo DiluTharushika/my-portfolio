@@ -5,7 +5,7 @@
   align-items: center;
   padding: 2rem; /* 32px */
   min-height: 100vh;
-  background-color: #f0f4f8; /* light blue background */
+    background:linear-gradient(180deg, #0a0f1e, #001f3f);/* light blue background */
 margin-top: 3cap;
 }
 
