@@ -16,25 +16,26 @@ const Home = () => {
     });
   }, []);
 
-  // Download CV with file check
+  // Download CV using Vite base URL
   const handleDownloadCV = async () => {
     try {
-      const response = await fetch("public/DiluTharushika-cv.pdf");
+      const cvUrl = `${import.meta.env.BASE_URL}dilutharushika.pdf`;
+      const response = await fetch(cvUrl);
+
       if (!response.ok) {
         alert("CV file is not available on the site.");
         return;
       }
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "DiluTharushika-CV.pdf";
+      a.download = "dilutharushika-cv.pdf";
       document.body.appendChild(a);
       a.click();
       a.remove();
       window.URL.revokeObjectURL(url);
-      // Optional success message
-      // alert("CV downloaded successfully!");
     } catch (error) {
       alert("Error downloading the CV.");
     }
