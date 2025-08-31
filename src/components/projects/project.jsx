@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./project.css";
 import uiImg from "../../assets/ui.jpeg"; 
 import mobileImg from "../../assets/mobile.jpeg"; 
@@ -9,20 +9,30 @@ import cafeImg from "../../assets/cafe.jpeg";
 import filmImg from "../../assets/film1.png"; 
 import pharmacyImg from "../../assets/pharmacy.jpeg";
 import todoImg from "../../assets/todo.jpeg"; 
+import prototype from "../../assets/prototype.jpeg";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const projects = [
-  { title: "AI-Powered Recipe App", description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.", image: recipeImg, path: "/recipe" },
-  { title: "Pharmacy Management System", description: "A web-based system for managing prescriptions, order processing, and billing with role-based access control.", image: pharmacyImg, path: "/pharmacy" },
-  { title: "Mini Games Collection", description: "A collection of interactive mini-games designed to enhance logical thinking and provide an engaging user experience.", image: gamesImg, path: "/game" },
-  { title: "Café Management System(UI Design)", description: "A desktop application to streamline café operations including order management, billing, and inventory tracking.", image: cafeImg, path: "/cafe" },
-  { title: "Film Hall Interface (UI Design)", description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering options.", image: filmImg, path: "/film" },
-  { title: "Smart To-Do App", description: "A mobile application designed to help users organize tasks, set priorities, and track daily progress with a simple and intuitive interface.", image: todoImg, path: "/todo" },
+  // Mobile Applications
+  { title: "AI-Powered Recipe App", description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.", image: recipeImg, path: "/recipe", category: "Mobile" },
+  { title: "Smart To-Do App", description: "A mobile application designed to help users organize tasks, set priorities, and track daily progress with a simple and intuitive interface.", image: todoImg, path: "/todo", category: "Mobile" },
+
+  // Web Applications
+  { title: "Pharmacy Management System", description: "A web-based system for managing prescriptions, order processing, and billing with role-based access control.", image: pharmacyImg, path: "/pharmacy", category: "Web" },
+  { title: "Mini Games Collection", description: "A collection of interactive mini-games designed to enhance logical thinking and provide an engaging user experience.", image: gamesImg, path: "/game", category: "Web" },
+  // UI/UX Designs
+  { title: "SwipeFlow Prototype", description: "An interactive Figma prototype showcasing smooth swipe animations and user flow transitions, designed to enhance UI/UX design skills.", image: prototype, path: "/proto", category: "UI/UX" },
+  { title: "Café Management System(UI Design)", description: "A desktop application to streamline café operations including order management, billing, and inventory tracking.", image: cafeImg, path: "/cafe", category: "UI/UX" },
+  { title: "Film Hall Interface (UI Design)", description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering options.", image: filmImg, path: "/film", category: "UI/UX" },
 ];
 
+const categories = ["All", "Mobile", "Web", "UI/UX"];
+
 const Project = () => {
+  const [activeTab, setActiveTab] = useState("All");
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -32,13 +42,38 @@ const Project = () => {
     });
   }, []);
 
+  const filteredProjects =
+    activeTab === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
+
   return (
     <section className="projects" id="projects">
       <div className="projects-container" data-aos="fade-up">
         <h2 data-aos="fade-up">My Projects</h2>
+
+        {/* Tabs */}
+        <div className="tabs">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`tab-btn ${activeTab === cat ? "active" : ""}`}
+              onClick={() => setActiveTab(cat)}
+            >
+              {cat} Applications
+            </button>
+          ))}
+        </div>
+
+        {/* Projects */}
         <div className="projects-list">
-          {projects.map((project, index) => (
-            <div className="project-card" key={index} data-aos="zoom-in" data-aos-delay={index * 150}>
+          {filteredProjects.map((project, index) => (
+            <div
+              className="project-card"
+              key={index}
+              data-aos="zoom-in"
+              data-aos-delay={index * 150}
+            >
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
               <p>{project.description}</p>

@@ -18,6 +18,7 @@ import Game from "./components/projects/game/game.jsx";
 import Cafe from "./components/projects/cafe/cafe.jsx";
 import Filmhall from "./components/projects/filmhall/filmhall.jsx";
 import Todo from "./components/projects/todo/todo.jsx";
+import Proto from "./components/projects/prototype/proto.jsx";
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/game" element={<Game />} />
         <Route path="/cafe" element={<Cafe />} />
         <Route path="/film" element={<Filmhall />} />
+        <Route path="proto" element={<Proto/>}/>
         <Route path="/todo" element={<Todo />} />
       </Routes>
     </Router>
