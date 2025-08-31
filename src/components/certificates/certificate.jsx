@@ -7,14 +7,17 @@ import cert1 from "../../assets/AI.jpg";
 import cert2 from "../../assets/javaIntro.jpg";
 import cert3 from "../../assets/javaIntermediate.png";
 import cert4 from "../../assets/sql.png";
-
-const categories = ["All", "Java", "Databases", "AI"];
+import cert5 from "../../assets/UI-Alison.png";
+const categories = ["All", "Java", "Databases", "AI","UI/UX"];
 
 const certificates = [
   { title: "AI in Data Analysis", issuer: "SoloLearn", category: "AI", image: cert1 },
+  { title: "UI/UX Design", issuer: "Alison", category: "UI/UX", image: cert5 },
   { title: "Java Introduction", issuer: "SoloLearn", category: "Java", image: cert2 },
+  
   { title: "Java Intermediate", issuer: "SoloLearn", category: "Java", image: cert3 },
   { title: "Introduction to SQL", issuer: "SoloLearn", category: "Databases", image: cert4 },
+  
 ];
 
 const Certificate = () => {
