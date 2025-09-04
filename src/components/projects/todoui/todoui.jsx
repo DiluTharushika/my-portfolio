@@ -16,7 +16,7 @@ const Todoui = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Figma
+            View Figma Design
           </a>
         </div>
         {/* Description */}

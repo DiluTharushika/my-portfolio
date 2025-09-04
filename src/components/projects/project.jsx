@@ -28,6 +28,7 @@ const projects = [
   { title: "Café Management System(UI Design)", description: "A desktop application to streamline café operations including order management, billing, and inventory tracking.", image: cafeImg, path: "/cafe", category: "UI/UX" },
   { title: "Film Hall Interface (UI Design)", description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering options.", image: filmImg, path: "/film", category: "UI/UX" },
 { title: "To-Do App UI Design", description: "A sleek and user-friendly UI design for a mobile To-Do application, focusing on task management and productivity features.", image: todoUi, path: "/todoui", category: "UI/UX" },
+ { title: "AI-Powered Recipe App UI Design", description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.", image: recipeImg, path: "/recipeui", category: "UI/UX" },
 ];
 
 const categories = ["All", "Mobile", "Web", "UI/UX"];
