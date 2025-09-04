@@ -51,7 +51,7 @@
   font-weight: 600; /* font-semibold */
   margin-bottom: 0.5rem; /* mb-2 */
   color: #f0f0f0; /* slightly lighter than paragraph */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* List items */
@@ -88,10 +88,30 @@
   transform: translateY(-2px);
 }
 
+/* Screenshot Gallery */
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.screenshot {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.screenshot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
 /* Hashtags */
 .recipe-card .hashtags {
   margin-top: 1.5rem; /* mt-6 */
   font-size: 0.875rem; /* text-sm */
   color: #d1d5db; /* light gray hashtags */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
