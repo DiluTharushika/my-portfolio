@@ -19,6 +19,7 @@ import Cafe from "./components/projects/cafe/cafe.jsx";
 import Filmhall from "./components/projects/filmhall/filmhall.jsx";
 import Todo from "./components/projects/todo/todo.jsx";
 import Proto from "./components/projects/prototype/proto.jsx";
+import Todoui from "./components/projects/todoui/todoui.jsx";
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/film" element={<Filmhall />} />
         <Route path="proto" element={<Proto/>}/>
         <Route path="/todo" element={<Todo />} />
+        <Route path="/todoui" element={<Todoui/>}/>
       </Routes>
     </Router>
   );

@@ -10,6 +10,7 @@ import filmImg from "../../assets/film1.png";
 import pharmacyImg from "../../assets/pharmacy.jpeg";
 import todoImg from "../../assets/todo.jpeg"; 
 import prototype from "../../assets/prototype.jpeg";
+import todoUi from "../../assets/todoui.jpeg";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -26,6 +27,7 @@ const projects = [
   { title: "SwipeFlow Prototype", description: "An interactive Figma prototype showcasing smooth swipe animations and user flow transitions, designed to enhance UI/UX design skills.", image: prototype, path: "/proto", category: "UI/UX" },
   { title: "Café Management System(UI Design)", description: "A desktop application to streamline café operations including order management, billing, and inventory tracking.", image: cafeImg, path: "/cafe", category: "UI/UX" },
   { title: "Film Hall Interface (UI Design)", description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering options.", image: filmImg, path: "/film", category: "UI/UX" },
+{ title: "To-Do App UI Design", description: "A sleek and user-friendly UI design for a mobile To-Do application, focusing on task management and productivity features.", image: todoUi, path: "/todoui", category: "UI/UX" },
 ];
 
 const categories = ["All", "Mobile", "Web", "UI/UX"];
