@@ -21,6 +21,7 @@ import Todo from "./components/projects/todo/todo.jsx";
 import Proto from "./components/projects/prototype/proto.jsx";
 import Todoui from "./components/projects/todoui/todoui.jsx";
 import Recipeui from "./components/projects/recipeui/recipeui.jsx";
+import Note from "./components/projects/noteapp/noteapp.jsx";
 const App = () => {
   return (
     <Router>
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="proto" element={<Proto/>}/>
         <Route path="/todo" element={<Todo />} />
         <Route path="/todoui" element={<Todoui/>}/>
+        <Route path="/note" element={<Note/>}/>
       <Route path="/recipeui" element={< Recipeui/>}></Route>
       </Routes>
     </Router>

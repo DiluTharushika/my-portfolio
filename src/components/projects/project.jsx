@@ -11,6 +11,7 @@ import pharmacyImg from "../../assets/pharmacy.jpeg";
 import todoImg from "../../assets/todo.jpeg"; 
 import prototype from "../../assets/prototype.jpeg";
 import todoUi from "../../assets/todoui.jpeg";
+import mobileImg2 from "../../assets/noteApp.jpeg";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,7 +20,7 @@ const projects = [
   // Mobile Applications
   { title: "AI-Powered Recipe App", description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.", image: recipeImg, path: "/recipe", category: "Mobile" },
   { title: "Smart To-Do App", description: "A mobile application designed to help users organize tasks, set priorities, and track daily progress with a simple and intuitive interface.", image: todoImg, path: "/todo", category: "Mobile" },
-
+  {title:"Simple Note App", description:"A mobile application that allows users to create, edit, and organize notes with features like tagging and search functionality.", image: mobileImg2, path:"/note", category:"Mobile"},
   // Web Applications
   { title: "Pharmacy Management System", description: "A web-based system for managing prescriptions, order processing, and billing with role-based access control.", image: pharmacyImg, path: "/pharmacy", category: "Web" },
   { title: "Mini Games Collection", description: "A collection of interactive mini-games designed to enhance logical thinking and provide an engaging user experience.", image: gamesImg, path: "/game", category: "Web" },
