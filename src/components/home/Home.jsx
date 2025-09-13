@@ -19,7 +19,7 @@ const Home = () => {
   // Download CV using Vite base URL
   const handleDownloadCV = async () => {
     try {
-      const cvUrl = `${import.meta.env.BASE_URL}dilutharushika.pdf`;
+      const cvUrl = `${import.meta.env.BASE_URL}DiluTharushika_Resume.pdf`;
       const response = await fetch(cvUrl);
 
       if (!response.ok) {
