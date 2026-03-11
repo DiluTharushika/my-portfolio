@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import "./navbar.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

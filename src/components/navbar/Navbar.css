@@ -3,26 +3,32 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(90deg, #0072ff, #00c6ff); /* Blue gradient */
-  box-shadow: 0 2px 10px rgba(0, 198, 255, 0.4);
+  background: rgba(10, 5, 20, 0.65);
+  /* Glass Black Background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(44, 216, 213, 0.2);
+  /* Subtle purple bottom border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 50px;
   z-index: 1000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
 }
 
 /* Logo */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #ffffff, #d1d5db); /* White gradient */
+  background: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px rgba(0, 198, 255, 0.6); /* Glow */
+  filter: drop-shadow(0 0 8px rgba(44, 216, 213, 0.5));
 }
 
 /* Nav links */
@@ -36,14 +42,18 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  color: #f8fafc; /* White for contrast */
+  color: #f8fafc;
+  /* White for contrast */
   transition: all 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #9f7aea; /* Purple highlight */
-  text-shadow: 0 0 10px rgba(159, 122, 234, 0.8),
-               0 0 15px rgba(0, 198, 255, 0.7);
+  background: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 6px rgba(44, 216, 213, 0.7));
 }
 
 /* Hamburger Menu */
@@ -57,7 +67,8 @@
 .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: #ffffff; /* White bars */
+  background-color: #ffffff;
+  /* White bars */
   border-radius: 2px;
 }
 
@@ -90,13 +101,17 @@
     position: absolute;
     top: 60px;
     right: 0;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    background: rgba(15, 10, 25, 0.95);
+    /* Dark, slightly purple background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(44, 216, 213, 0.15);
     flex-direction: column;
     width: 100%;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 198, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
   }
 
   .nav-links li {
@@ -110,7 +125,11 @@
   }
 
   .nav-links li a:hover {
-    color: #00c6ff;
+    background: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 6px rgba(44, 216, 213, 0.7));
   }
 
   .hamburger {
