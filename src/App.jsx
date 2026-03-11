@@ -4,7 +4,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // Main Sections
 import Navbar from "./components/navbar/Navbar.jsx";
 import Home from "./components/home/Home.jsx";
-import About from "./components/About/about.jsx";
+import About from "./components/about/about.jsx";
 import Skill from "./components/skills/skill.jsx";
 import Project from "./components/projects/project.jsx";
 import Certificate from "./components/certificates/certificate.jsx";
