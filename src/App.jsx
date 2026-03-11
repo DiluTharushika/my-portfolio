@@ -22,10 +22,13 @@ import Proto from "./components/projects/prototype/proto.jsx";
 import Todoui from "./components/projects/todoui/todoui.jsx";
 import Recipeui from "./components/projects/recipeui/recipeui.jsx";
 import Note from "./components/projects/noteapp/noteapp.jsx";
+import SpaceRobot from "./components/home/SpaceRobot.jsx";
+
 const App = () => {
   return (
     <Router>
       <Navbar />
+      <SpaceRobot />
       <Routes>
         {/* Main Portfolio Sections */}
         <Route
@@ -49,11 +52,11 @@ const App = () => {
         <Route path="/game" element={<Game />} />
         <Route path="/cafe" element={<Cafe />} />
         <Route path="/film" element={<Filmhall />} />
-        <Route path="proto" element={<Proto/>}/>
+        <Route path="proto" element={<Proto />} />
         <Route path="/todo" element={<Todo />} />
-        <Route path="/todoui" element={<Todoui/>}/>
-        <Route path="/note" element={<Note/>}/>
-      <Route path="/recipeui" element={< Recipeui/>}></Route>
+        <Route path="/todoui" element={<Todoui />} />
+        <Route path="/note" element={<Note />} />
+        <Route path="/recipeui" element={< Recipeui />}></Route>
       </Routes>
     </Router>
   );

@@ -5,7 +5,6 @@ import { ReactTyped } from "react-typed";
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SpaceRobot from "./SpaceRobot";
 
 const Home = () => {
   useEffect(() => {
@@ -43,7 +42,6 @@ const Home = () => {
 
   return (
     <div className="home" id="home">
-      <SpaceRobot />
       {/* Left Side Text */}
       <div className="home-text" data-aos="fade-right">
         <h1 data-aos="fade-up" data-aos-delay="100">
