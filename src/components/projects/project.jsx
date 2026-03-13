@@ -32,7 +32,7 @@ const projects = [
     image: todoImg, 
     path: "/todo", 
     category: "Mobile",
-    techs: ["React Native", "SQLite", "Lottie"],
+    techs: ["React Native", "Expo", "Firebase", "JavaScript"],
     isNew: true
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     image: mobileImg2, 
     path:"/note", 
     category:"Mobile",
-    techs: ["Java", "Android SDK", "Room"],
+    techs: ["React Native", "Expo", "Firebase", "JavaScript"],
     isNew: true
   },
   { 
@@ -50,7 +50,7 @@ const projects = [
     image: pharmacyImg, 
     path: "/pharmacy", 
     category: "Web",
-    techs: ["PHP", "MySQL", "JavaScript"],
+    techs: ["html", "css", "js", "php", "mysql", ],
     isBest: true
   },
   { 
@@ -84,7 +84,7 @@ const projects = [
     image: filmImg, 
     path: "/film", 
     category: "UI/UX",
-    techs: ["Adobe XD", "UI Design", "User Flow"]
+    techs: ["Figma", "UI Design", "User Flow"]
   },
   { 
     title: "To-Do App UI Design", 
