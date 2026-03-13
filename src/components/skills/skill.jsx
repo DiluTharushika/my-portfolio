@@ -16,9 +16,8 @@ import vscodeImg from "../../assets/vscode.png";
 import intellijImg from "../../assets/intelij.png";
 import figmaImg from "../../assets/figma.png";
 import canvaImg from "../../assets/canva.png";
-import problemImg from "../../assets/problem1.png";
-import teamworkImg from "../../assets/team.png";
-import timeImg from "../../assets/time.png";
+
+import { HiOutlineLightBulb, HiOutlineUsers, HiOutlineClock } from "react-icons/hi";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -48,9 +47,9 @@ const skillCategories = {
     { name: "Canva", icon: canvaImg, level: 90 },
   ],
   "Professional": [
-    { name: "Problem Solving", icon: problemImg, level: 90 },
-    { name: "Teamwork", icon: teamworkImg, level: 95 },
-    { name: "Time Management", icon: timeImg, level: 85 },
+    { name: "Problem Solving", icon: <HiOutlineLightBulb />, level: 90, isIcon: true },
+    { name: "Teamwork", icon: <HiOutlineUsers />, level: 95, isIcon: true },
+    { name: "Time Management", icon: <HiOutlineClock />, level: 85, isIcon: true },
   ],
 };
 
@@ -66,34 +65,55 @@ const Skill = () => {
     });
   }, []);
 
+  // Animation Variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.12,
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1], // Slow, smooth ease
+      }
+    })
+  };
+
+  const barVariants = {
+    hidden: { width: 0 },
+    visible: (level) => ({
+      width: `${level}%`,
+      transition: {
+        duration: 1.5,
+        delay: 0.5,
+        ease: "circOut"
+      }
+    })
+  };
+
   return (
     <section className="skills-section" id="skills">
-      <div className="skills-glass-container" data-aos="fade-up">
-        <div className="skills-header">
-          <h2 className="glitch-text" data-text="Technical Expertise">Technical Expertise</h2>
-          <div className="divider"></div>
+      <div className="skills-container">
+        <h2 data-aos="fade-up">Technical Expertise</h2>
+
+        <div className="skills-header" data-aos="fade-up" data-aos-delay="200">
+          <div className="skills-divider"></div>
           <p>
-            An evolving set of skills acquired through academic excellence and hands-on projects, 
+            An evolving set of skills acquired through academic excellence and hands-on projects,
             focused on building robust and scalable digital solutions.
           </p>
         </div>
 
         {/* Categories Tab Navigation */}
-        <div className="skills-nav-tabs">
+        <div className="skills-nav-tabs" data-aos="fade-up" data-aos-delay="300">
           {Object.keys(skillCategories).map((category, index) => (
             <button
               key={index}
               className={`nav-tab-btn ${activeCategory === category ? "active" : ""}`}
               onClick={() => setActiveCategory(category)}
             >
-              <span className="tab-text">{category}</span>
-              {activeCategory === category && (
-                <motion.div 
-                  layoutId="activeTab" 
-                  className="active-tab-indicator"
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                />
-              )}
+              {category}
             </button>
           ))}
         </div>
@@ -103,25 +123,35 @@ const Skill = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -10 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
               className="skills-flex-grid"
             >
               {skillCategories[activeCategory].map((skill, index) => (
                 <motion.div
                   className="skill-card-modern"
                   key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{
+                    y: -10,
+                    boxShadow: "0 15px 35px rgba(0, 198, 255, 0.3)",
+                    transition: { duration: 0.3 }
+                  }}
                 >
                   <div className="card-inner-glow"></div>
                   <div className="skill-card-top">
                     <div className="icon-box">
-                      <img src={skill.icon} alt={skill.name} className="skill-img-main" />
+                      {skill.isIcon ? (
+                        <div className="skill-react-icon">{skill.icon}</div>
+                      ) : (
+                        <img src={skill.icon} alt={skill.name} className="skill-img-main" />
+                      )}
                     </div>
                     <div className="skill-info">
                       <span className="skill-name-text">{skill.name}</span>
@@ -129,11 +159,13 @@ const Skill = () => {
                     </div>
                   </div>
                   <div className="skill-bar-container">
-                    <motion.div 
+                    <motion.div
                       className="skill-bar-fill"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: 0.4 + index * 0.05, ease: "circOut" }}
+                      custom={skill.level}
+                      variants={barVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
                     />
                   </div>
                 </motion.div>

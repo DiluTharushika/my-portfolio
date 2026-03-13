@@ -84,7 +84,7 @@ const About = () => {
                   <div className="timeline-content">
                     <h3>Intern Web, Mobile Developer</h3>
                     <h4>Selecta Marketing (Pvt) Ltd</h4>
-                    <span className="timeline-date">Nov 2025 – Feb 2026</span>
+                    <span className="timeline-date">Nov 2025 – Mar 2026</span>
                     <ul>
                       <li>Developed and maintained WordPress & WooCommerce websites, including themes, plugins, content, and e-commerce functionality.</li>
                       <li>Built responsive web interfaces using HTML, CSS, JavaScript, and basic PHP, with SEO and performance optimization.</li>

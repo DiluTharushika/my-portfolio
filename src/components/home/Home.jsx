@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Home.css";
 import homeVideo from "../../assets/homeVideo.mp4";
 import { ReactTyped } from "react-typed";
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SpaceRobot from "./SpaceRobot.jsx";
 
 const Home = () => {
+  const [isHomeVisible, setIsHomeVisible] = useState(true);
+  const homeRef = useRef(null);
+
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -14,6 +18,23 @@ const Home = () => {
       mirror: true,
       easing: "ease-in-out",
     });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHomeVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when at least 10% is visible
+    );
+
+    if (homeRef.current) {
+      observer.observe(homeRef.current);
+    }
+
+    return () => {
+      if (homeRef.current) {
+        observer.unobserve(homeRef.current);
+      }
+    };
   }, []);
 
   const handleDownloadCV = async () => {
@@ -41,7 +62,10 @@ const Home = () => {
   };
 
   return (
-    <div className="home" id="home">
+    <div className="home" id="home" ref={homeRef}>
+      {/* Robot with cursor - only visible in Home section */}
+      {isHomeVisible && <SpaceRobot />}
+
       {/* Left Side Text */}
       <div className="home-text" data-aos="fade-right">
         <h1 data-aos="fade-up" data-aos-delay="100">
@@ -77,7 +101,7 @@ const Home = () => {
 
         <button
           onClick={handleDownloadCV}
-          className="btn"
+          className="btn cv-button-home"
           data-aos="flip-left"
           data-aos-delay="700"
         >
@@ -89,6 +113,7 @@ const Home = () => {
             href="https://www.linkedin.com/in/dilutharushika"
             target="_blank"
             rel="noopener noreferrer"
+            className="linkedin-link-home"
             data-aos="fade-up"
             data-aos-delay="800"
           >
@@ -98,6 +123,7 @@ const Home = () => {
             href="https://github.com/DiluTharushika"
             target="_blank"
             rel="noopener noreferrer"
+            className="github-link-home"
             data-aos="fade-up"
             data-aos-delay="900"
           >
@@ -105,6 +131,7 @@ const Home = () => {
           </a>
           <a
             href="mailto:dilutharushika02@gmail.com"
+            className="email-link-home"
             data-aos="fade-up"
             data-aos-delay="1000"
           >
@@ -114,6 +141,7 @@ const Home = () => {
             href="https://twitter.com/DiluTharushika"
             target="_blank"
             rel="noopener noreferrer"
+            className="twitter-link-home"
             data-aos="fade-up"
             data-aos-delay="1100"
           >
@@ -138,4 +166,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;

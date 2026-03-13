@@ -300,50 +300,67 @@
 
 /* Responsive Overrides */
 @media (max-width: 768px) {
-  .about-container {
-    padding: 0 10px;
+  .about {
+    padding: 60px 15px;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .about-tabs {
     flex-direction: column;
     width: 100%;
-    align-items: center;
-    gap: 10px;
+    align-items: stretch;
+    gap: 8px;
   }
 
   .about-tab-btn {
     width: 100%;
-    max-width: 300px;
+    max-width: none;
+    padding: 10px 15px;
+    font-size: 0.95rem;
   }
 
   .timeline-item {
-    padding-left: 30px;
+    padding-left: 25px;
   }
 
   .timeline-item::before {
-    left: 8px;
+    left: 4px;
   }
 
   .timeline-dot {
-    left: 0px;
+    left: -4px;
     width: 18px;
     height: 18px;
     top: 18px;
   }
 
-  .timeline-content {
+  .about-text-content {
     padding: 20px 15px;
   }
 
-  .timeline-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .timeline-content h4 {
+  .about-text-content p {
     font-size: 1rem;
   }
 
-  .about-text-content {
-    padding: 20px 15px;
+  .timeline-content {
+    padding: 15px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container h2 {
+    font-size: 1.8rem;
   }
 }

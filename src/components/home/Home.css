@@ -294,13 +294,52 @@
 }
 
 @media (max-width: 768px) {
+  .home {
+    padding: 100px 15px 40px;
+  }
+  
+  .home-text {
+    padding: 25px 15px;
+    border-radius: 16px;
+  }
+
+  .home-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .home-text h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .home-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
   .home-video {
     max-width: 100%;
     border-radius: 12px;
   }
 
-  .home-text p {
-    font-size: 0.95rem;
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-text h1 {
+    font-size: 1.6rem;
+  }
+  
+  .social-icons {
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
   }
 }
 
