@@ -154,7 +154,8 @@
 }
 
 .mobile-frame {
-  max-width: 350px;
+  max-width: 100%;
+  width: 100%;
   border-radius: 40px;
   border: 12px solid #1a1a1a;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(107, 141, 214, 0.2);
@@ -196,7 +197,8 @@
   margin-bottom: 20px;
 }
 
-.role-tag, .status-tag {
+.role-tag,
+.status-tag {
   display: inline-block;
   background: rgba(44, 216, 213, 0.1);
   color: #2CD8D5;
@@ -263,11 +265,11 @@
   .detail-hero h1 {
     font-size: 2.3rem;
   }
-  
+
   .detail-main-card {
     padding: 25px;
   }
-  
+
   .mobile-frame {
     max-width: 280px;
   }

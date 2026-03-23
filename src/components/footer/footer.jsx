@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaEnvelope, FaMapMarkerAlt, FaBehance } from "react-icons/fa";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Footer = () => {
@@ -51,6 +51,9 @@ const Footer = () => {
               </a>
               <a href="https://twitter.com/DiluTharushika" target="_blank" rel="noopener noreferrer">
                 <FaTwitter />
+              </a>
+              <a href="https://www.behance.net/dilutharushika" target="_blank" rel="noopener noreferrer">
+                <FaBehance />
               </a>
             </div>
           </div>

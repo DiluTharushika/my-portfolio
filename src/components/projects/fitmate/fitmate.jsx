@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { HashLink as Link } from "react-router-hash-link";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { FiFigma } from "react-icons/fi";
-import "./todoui.css";
+import "./fitmate.css";
 
 // Import project screenshot
-import todoss from "../../../assets/todoss.png";
+import fitmatess from "../../../assets/fitmate.png";
 
-const TodoUI = () => {
+const Fitmate = () => {
   return (
     <motion.div
       className="project-detail-page"
@@ -17,12 +17,12 @@ const TodoUI = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="detail-bg-overlay"></div>
+      <div className="detail-bg-overlay fitmate-bg"></div>
 
       <div className="detail-container">
         {/* Navigation */}
         <Link to="/#projects" state={{ activeTab: "UI/UX" }} className="back-btn-professional">
-          <HiOutlineArrowLeft /> Back to Project UI Designs
+          <HiOutlineArrowLeft /> Back to Projects
         </Link>
 
         {/* Hero Section */}
@@ -32,7 +32,7 @@ const TodoUI = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            TODO APP UI
+            FitMate WORKOUT APP
           </motion.h1>
           <motion.div
             className="hero-divider"
@@ -46,7 +46,7 @@ const TodoUI = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Visual Storytelling for Daily Productivity
+            Empowering Your Fitness Journey Through Design
           </motion.p>
         </header>
 
@@ -63,14 +63,15 @@ const TodoUI = () => {
             <section className="detail-section">
               <h3>Design Concept</h3>
               <p>
-                The Todo App UI project focuses on creating a <strong>minimalist and high-performance
-                  interface</strong> for task management. The design logic centers around
-                reducing cognitive load while providing all necessary tools for efficient
-                organization.
+                The FitMate UI/UX project was designed to create an engaging and encouraging environment
+                for users to track their daily fitness progress. The emphasis is on a
+                <strong> clean and robust</strong> visual hierarchy, utilizing vivid performance metrics
+                like steps, calories, and hydration levels.
               </p>
               <p>
-                Every interaction was prototyped in <strong>Figma</strong> to ensure that the
-                transition from screen to screen feels natural and fluid on mobile devices.
+                A core feature is the <em>7-Day Streak</em> motivational chart, which helps users
+                stay consistent in their fitness goals, with high-fidelity screens prototyped
+                in <strong>Figma</strong> for a seamless mobile experience.
               </p>
             </section>
 
@@ -78,16 +79,31 @@ const TodoUI = () => {
               <h3>UI Design Highlights</h3>
               <ul className="highlights-modern-list">
                 <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
-                  Clean Typography & High Visual Contrast
+                  Vibrant, Color-Coded Activity Rings
                 </motion.li>
                 <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}>
-                  Styled Category Badges & Priority Matrices
+                  Intuitive Activity Logging System
                 </motion.li>
                 <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}>
-                  Task Status Visual Indicators
+                  Comprehensive User Profile Dashboards
                 </motion.li>
                 <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 1.0 }}>
-                  Optimized Touch Targets for Mobile Interaction
+                  Soft Shadows and Modern Card Interfaces
+                </motion.li>
+              </ul>
+            </section>
+
+            <section className="detail-section">
+              <h3>App Screens Include</h3>
+              <ul className="highlights-modern-list">
+                <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
+                  Splash Screen & Authentication (Sign In/Sign Up)
+                </motion.li>
+                <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}>
+                  Main Dashboard Metrics View
+                </motion.li>
+                <motion.li initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}>
+                  Add Activity Form (Auto & Manual Tracking)
                 </motion.li>
               </ul>
             </section>
@@ -101,7 +117,7 @@ const TodoUI = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <img src={todoss} alt="Todo UI Design Case" />
+                  <img src={fitmatess} alt="FitMate UI Screens" />
                 </motion.div>
               </div>
             </section>
@@ -119,7 +135,7 @@ const TodoUI = () => {
               <h4>Design Tools</h4>
               <div className="detail-action-links">
                 <a
-                  href="https://www.figma.com/design/Jz0IBwM9iBvkCn31umsvNN/Untitled"
+                  href="https://www.figma.com/design/4z2IwZNSVundppIcjrw14w/Untitled?node-id=0-1&t=4fQvZViJIhMAG17V-1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="action-link-btn figma-brand"
@@ -131,15 +147,15 @@ const TodoUI = () => {
 
             <div className="sidebar-card">
               <h4>Project Meta</h4>
-              <p className="role-tag">UI Designer</p>
+              <p className="role-tag">UI/UX Designer</p>
               <h4>Tech Implementation</h4>
               <div className="tech-pills">
-                <span>React Native</span>
-                <span>Expo SDK</span>
-                <span>Figma Prototyping</span>
+                <span>Figma</span>
+                <span>Mobile Design</span>
+                <span>Prototyping</span>
               </div>
               <h4 style={{ marginTop: "20px" }}>Design Status</h4>
-              <p className="status-tag">Completed & Prototyped</p>
+              <p className="status-tag">High-Fidelity Prototype</p>
             </div>
           </motion.div>
         </div>
@@ -148,4 +164,4 @@ const TodoUI = () => {
   );
 };
 
-export default TodoUI;
+export default Fitmate;

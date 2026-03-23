@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Home.css";
 import homeVideo from "../../assets/homeVideo.mp4";
 import { ReactTyped } from "react-typed";
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaBehance } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SpaceRobot from "./SpaceRobot.jsx";
@@ -147,6 +147,16 @@ const Home = () => {
           >
             <FaTwitter />
           </a>
+          <a
+            href="https://www.behance.net/dilutharushika"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="behance-link-home"
+            data-aos="fade-up"
+            data-aos-delay="1200"
+          >
+            <FaBehance />
+          </a>
         </div>
       </div>
 
@@ -166,4 +176,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;

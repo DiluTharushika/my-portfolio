@@ -3,102 +3,123 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./project.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Project Images
-import recipeImg from "../../assets/recipe22.jpeg"; 
-import gamesImg from "../../assets/game1.jpeg"; 
-import cafeImg from "../../assets/cafe.jpeg"; 
-import filmImg from "../../assets/film1.png"; 
+import recipeImg from "../../assets/recipe22.jpeg";
+import gamesImg from "../../assets/game1.jpeg";
+import cafeImg from "../../assets/cafe.jpeg";
+import filmImg from "../../assets/film1.png";
 import pharmacyImg from "../../assets/pharmacy.jpeg";
-import todoImg from "../../assets/todo.jpeg"; 
+import todoImg from "../../assets/todo.jpeg";
 import prototype from "../../assets/prototype.jpeg";
 import todoUi from "../../assets/todoui.jpeg";
 import mobileImg2 from "../../assets/noteApp.jpeg";
+import fitmateImg from "../../assets/fitmate-banner.png";
+import bobaImg from "../../assets/boba-poster.png";
 
 const projects = [
-  { 
-    title: "AI-Powered Recipe App", 
-    description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.", 
-    image: recipeImg, 
-    path: "/recipe", 
+  {
+    title: "AI-Powered Recipe App",
+    description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.",
+    image: recipeImg,
+    path: "/recipe",
     category: "Mobile",
     techs: ["React Native", "OpenAI", "Firebase"],
     isBest: true
   },
-  { 
-    title: "Smart To-Do App", 
-    description: "A mobile application designed to help users organize tasks, set priorities, and track daily progress with a simple and intuitive interface.", 
-    image: todoImg, 
-    path: "/todo", 
+  {
+    title: "Smart To-Do App",
+    description: "A mobile application designed to help users organize tasks, set priorities, and track daily progress with a simple and intuitive interface.",
+    image: todoImg,
+    path: "/todo",
     category: "Mobile",
     techs: ["React Native", "Expo", "Firebase", "JavaScript"],
     isNew: true
   },
   {
-    title:"Simple Note App", 
-    description:"A mobile application that allows users to create, edit, and organize notes with features like tagging and search functionality.", 
-    image: mobileImg2, 
-    path:"/note", 
-    category:"Mobile",
+    title: "Simple Note App",
+    description: "A mobile application that allows users to create, edit, and organize notes with features like tagging and search functionality.",
+    image: mobileImg2,
+    path: "/note",
+    category: "Mobile",
     techs: ["React Native", "Expo", "Firebase", "JavaScript"],
     isNew: true
   },
-  { 
-    title: "Pharmacy Management System", 
-    description: "A web-based system for managing prescriptions, order processing, and billing with role-based access control.", 
-    image: pharmacyImg, 
-    path: "/pharmacy", 
-    category: "Web",
-    techs: ["html", "css", "js", "php", "mysql", ],
+  {
+    title: "FitMate Workout App",
+    description: "A comprehensive UI/UX design for a fitness tracking application featuring activity monitoring, progress streaking, and personalized user profiles.",
+    image: fitmateImg,
+    path: "/fitmate",
+    category: "UI/UX",
+    techs: ["Figma", "UI Design", "Prototyping"],
     isBest: true
   },
-  { 
-    title: "Mini Games Collection", 
-    description: "A collection of interactive mini-games designed to enhance logical thinking and provide an engaging user experience.", 
-    image: gamesImg, 
-    path: "/game", 
+  {
+    title: "Pharmacy Management System",
+    description: "A web-based system for managing prescriptions, order processing, and billing with role-based access control.",
+    image: pharmacyImg,
+    path: "/pharmacy",
+    category: "Web",
+    techs: ["html", "css", "js", "php", "mysql",],
+    isBest: true
+  },
+  {
+    title: "Boba Bubble Tea Shop Design",
+    description: "A premium UI/UX design for a bubble tea shop, featuring a modern home page, interactive menu, and high-fidelity wireframes.",
+    image: bobaImg,
+    path: "/boba",
+    category: "UI/UX",
+    techs: ["Figma", "UI Design", "Branding"],
+    isBest: true
+  },
+  {
+    title: "Mini Games Collection",
+    description: "A collection of interactive mini-games designed to enhance logical thinking and provide an engaging user experience.",
+    image: gamesImg,
+    path: "/game",
     category: "Web",
     techs: ["HTML5", "CSS3", "JS"]
   },
-  { 
-    title: "SwipeFlow Prototype", 
-    description: "An interactive Figma prototype showcasing smooth swipe animations and user flow transitions.", 
-    image: prototype, 
-    path: "/proto", 
+  {
+    title: "SwipeFlow Prototype",
+    description: "An interactive Figma prototype showcasing smooth swipe animations and user flow transitions.",
+    image: prototype,
+    path: "/proto",
     category: "UI/UX",
     techs: ["Figma", "Prototyping", "UX Research"],
     isNew: true
   },
-  { 
-    title: "Café Management System (UI Design)", 
-    description: "A desktop application UI to streamline café operations including order management and inventory tracking.", 
-    image: cafeImg, 
-    path: "/cafe", 
+  {
+    title: "Café Management System (UI Design)",
+    description: "A desktop application UI to streamline café operations including order management and inventory tracking.",
+    image: cafeImg,
+    path: "/cafe",
     category: "UI/UX",
-    techs: ["Figma", "UI Design", "Branding"]
+    techs: ["Figma", "UI Design", "Branding"],
+    isBest: true
   },
-  { 
-    title: "Film Hall Interface (UI Design)", 
-    description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering.", 
-    image: filmImg, 
-    path: "/film", 
+  {
+    title: "Film Hall Interface (UI Design)",
+    description: "A modern UI design for a film hall booking system, featuring seat selection and integrated food ordering.",
+    image: filmImg,
+    path: "/film",
     category: "UI/UX",
     techs: ["Figma", "UI Design", "User Flow"]
   },
-  { 
-    title: "To-Do App UI Design", 
-    description: "A sleek and user-friendly UI design for a mobile To-Do application, focusing on productivity features.", 
-    image: todoUi, 
-    path: "/todoui", 
+  {
+    title: "To-Do App UI Design",
+    description: "A sleek and user-friendly UI design for a mobile To-Do application, focusing on productivity features.",
+    image: todoUi,
+    path: "/todoui",
     category: "UI/UX",
     techs: ["Figma", "Material Design"]
   },
-  { 
-    title: "Recipe App UI Design", 
-    description: "High-fidelity mobile screens for an AI-integrated recipe platform with clean and intuitive navigation.", 
-    image: recipeImg, 
-    path: "/recipeui", 
+  {
+    title: "Recipe App UI Design",
+    description: "High-fidelity mobile screens for an AI-integrated recipe platform with clean and intuitive navigation.",
+    image: recipeImg,
+    path: "/recipeui",
     category: "UI/UX",
     techs: ["Figma", "Clean UI", "UX Case Study"]
   },
@@ -107,7 +128,14 @@ const projects = [
 const categories = ["All", "Mobile", "Web", "UI/UX"];
 
 const Project = () => {
-  const [activeTab, setActiveTab] = useState("All");
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(location.state?.activeTab || "All");
+
+  useEffect(() => {
+    if (location.state?.activeTab) {
+      setActiveTab(location.state.activeTab);
+    }
+  }, [location.state?.activeTab]);
 
   useEffect(() => {
     AOS.init({
@@ -125,18 +153,18 @@ const Project = () => {
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: false, amount: 0.1 }}
-      transition={{ 
-        duration: 1.5, 
-        delay: index * 0.1, 
+      transition={{
+        duration: 1.5,
+        delay: index * 0.1,
         ease: [0.16, 1, 0.3, 1],
         type: "spring",
         stiffness: 50,
         damping: 20
       }}
-      whileHover={{ 
-        y: -12, 
+      whileHover={{
+        y: -12,
         scale: 1.02,
-        transition: { duration: 0.6, ease: "easeOut" } 
+        transition: { duration: 0.6, ease: "easeOut" }
       }}
     >
       <div className="card-top-image">
@@ -145,11 +173,11 @@ const Project = () => {
         {project.isBest && <div className="featured-badge">BEST</div>}
         {project.isNew && <div className="new-badge">NEW</div>}
       </div>
-      
+
       <div className="card-bottom-info">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
-        
+
         <div className="tech-badges-list">
           {project.techs && project.techs.map((tech, i) => (
             <span key={i} className="tech-badge">{tech}</span>
@@ -169,11 +197,11 @@ const Project = () => {
     <section className="projects" id="projects">
       <div className="projects-container">
         <h2 data-aos="fade-up">Creative Solutions</h2>
-        
+
         <div className="projects-header" data-aos="fade-up" data-aos-delay="200">
           <div className="about-divider"></div>
           <p>
-            A curated showcase of my technical journey, featuring full-stack applications, 
+            A curated showcase of my technical journey, featuring full-stack applications,
             mobile experiences, and high-fidelity user interface designs.
           </p>
         </div>
@@ -230,6 +258,7 @@ const Project = () => {
                 <div className="projects-flex-grid">
                   {projects
                     .filter(p => p.category === activeTab)
+                    .sort((a, b) => (b.isBest ? 1 : 0) - (a.isBest ? 1 : 0))
                     .map((p, i) => renderProjectCard(p, i))}
                 </div>
               )}

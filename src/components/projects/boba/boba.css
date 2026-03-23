@@ -1,0 +1,96 @@
+/* Boba Project Specific Styles - Matching Professional Portfolio Aesthetic */
+.project-detail-page {
+  min-height: 100vh;
+  padding: 120px 20px 80px;
+  background-color: #05020a;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.boba-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(121, 85, 72, 0.15) 0%, transparent 70%);
+}
+
+.detail-hero h1 {
+  background: linear-gradient(135deg, #d7ccc8 0%, #a1887f 50%, #5d4037 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-divider {
+  background: linear-gradient(90deg, #d7ccc8, #5d4037);
+}
+
+.design-frame-comparison {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(121, 85, 72, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  transition: all 0.5s ease;
+}
+
+.design-frame-comparison:hover {
+  transform: scale(1.02);
+  border-color: rgba(121, 85, 72, 0.6);
+  box-shadow: 0 30px 60px rgba(121, 85, 72, 0.2);
+}
+
+.design-frame-comparison img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.design-frame-poster {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(121, 85, 72, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease;
+}
+
+.design-frame-poster:hover {
+  transform: translateY(-10px);
+  border-color: rgba(121, 85, 72, 0.6);
+  box-shadow: 0 30px 60px rgba(121, 85, 72, 0.2);
+}
+
+.design-frame-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #a1887f;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Boba-specific override for sidebar tags to match theme */
+.role-tag,
+.status-tag {
+  background: rgba(121, 85, 72, 0.2) !important;
+  color: #d7ccc8 !important;
+  border: 1px solid rgba(121, 85, 72, 0.3) !important;
+}
+
+.tech-pills span {
+  background: rgba(255, 255, 255, 0.05);
+  color: #d7ccc8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.figma-brand {
+  background: linear-gradient(90deg, #F24E1E, #A259FF) !important;
+  color: white !important;
+}
+
+.detail-section h3 {
+  color: #d7ccc8 !important;
+}

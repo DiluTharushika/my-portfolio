@@ -10,7 +10,7 @@ import todoss from "../../../assets/todoss.png";
 
 const Todo = () => {
   return (
-    <motion.div 
+    <motion.div
       className="project-detail-page"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -18,29 +18,29 @@ const Todo = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="detail-bg-overlay"></div>
-      
+
       <div className="detail-container">
         {/* Navigation */}
-        <Link to="/#projects" className="back-btn-professional">
+        <Link to="/#projects" state={{ activeTab: "Mobile" }} className="back-btn-professional">
           <HiOutlineArrowLeft /> Back to Projects
         </Link>
 
         {/* Hero Section */}
         <header className="detail-hero">
-          <motion.h1 
+          <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             TODO MOBILE APP
           </motion.h1>
-          <motion.div 
+          <motion.div
             className="hero-divider"
             initial={{ width: 0 }}
             animate={{ width: "120px" }}
             transition={{ delay: 0.4, duration: 0.8 }}
           ></motion.div>
-          <motion.p 
+          <motion.p
             className="hero-subtitle"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -53,7 +53,7 @@ const Todo = () => {
         {/* Main Content Grid */}
         <div className="detail-content-grid">
           {/* Left: Info Card */}
-          <motion.div 
+          <motion.div
             className="detail-main-card"
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -63,13 +63,13 @@ const Todo = () => {
             <section className="detail-section">
               <h3>Overview</h3>
               <p>
-                The To-Do Mobile Application is a productivity powerhouse designed for the 
-                modern user. Built with React Native (Expo), it offers a seamless, high-performance 
-                experience that helps users organize their chaotic schedules into clear, 
+                The To-Do Mobile Application is a productivity powerhouse designed for the
+                modern user. Built with React Native (Expo), it offers a seamless, high-performance
+                experience that helps users organize their chaotic schedules into clear,
                 actionable tasks.
               </p>
               <p>
-                By integrating Firebase, the app ensures that your data is always in sync across 
+                By integrating Firebase, the app ensures that your data is always in sync across
                 all your devices, providing a reliable backbone for your daily productivity.
               </p>
             </section>
@@ -95,7 +95,7 @@ const Todo = () => {
             <section className="detail-section">
               <h3>Interface Preview</h3>
               <div className="single-screenshot-display">
-                <motion.div 
+                <motion.div
                   className="screenshot-wrapper-v2 mobile-frame"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -108,7 +108,7 @@ const Todo = () => {
           </motion.div>
 
           {/* Right: Sidebar / Links */}
-          <motion.div 
+          <motion.div
             className="detail-sidebar"
             initial={{ x: 30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}

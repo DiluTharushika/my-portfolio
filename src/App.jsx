@@ -1,5 +1,15 @@
-import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+  return null;
+};
 
 // Main Sections
 import Navbar from "./components/navbar/Navbar.jsx";
@@ -22,10 +32,13 @@ import Proto from "./components/projects/prototype/proto.jsx";
 import Todoui from "./components/projects/todoui/todoui.jsx";
 import Recipeui from "./components/projects/recipeui/recipeui.jsx";
 import Note from "./components/projects/noteapp/noteapp.jsx";
+import Fitmate from "./components/projects/fitmate/fitmate.jsx";
+import Boba from "./components/projects/boba/boba.jsx";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         {/* Main Portfolio Sections */}
@@ -55,6 +68,8 @@ const App = () => {
         <Route path="/todoui" element={<Todoui />} />
         <Route path="/note" element={<Note />} />
         <Route path="/recipeui" element={<Recipeui />} />
+        <Route path="/fitmate" element={<Fitmate />} />
+        <Route path="/boba" element={<Boba />} />
       </Routes>
     </Router>
   );

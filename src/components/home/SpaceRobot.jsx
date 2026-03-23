@@ -14,6 +14,7 @@ const SpaceRobot = () => {
         { class: '.github-link-home', message: "check out my code on GitHub!", threshold: 90 },
         { class: '.email-link-home', message: "let's stay in touch via email!", threshold: 90 },
         { class: '.twitter-link-home', message: "follow my updates on Twitter!", threshold: 90 },
+        { class: '.behance-link-home', message: "this is my behance account", threshold: 90 },
         { class: '.cv-button-home', message: "click the button to download my CV", threshold: 150 }
     ];
 
