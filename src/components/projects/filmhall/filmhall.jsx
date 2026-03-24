@@ -184,7 +184,7 @@ const Filmhall = () => {
             <div className="sidebar-card">
               <h4>Design Tools</h4>
               <div className="detail-action-links">
-                <a href="https://lnkd.in/er7beMhr" target="_blank" rel="noopener noreferrer" className="action-link-btn figma">
+                <a href="https://www.figma.com/design/s7WBPxrHFUiOB7z48qENiB/Untitled?t=g2UZDgrUyGdOrEii-1" target="_blank" rel="noopener noreferrer" className="action-link-btn figma">
                   <FiFigma /> View Figma Design
                 </a>
                 <a href="https://www.linkedin.com/posts/dilutharushika_uidesign-uxdesign-figma-activity-7358474687212912640-136c" target="_blank" rel="noopener noreferrer" className="action-link-btn linkedin">

@@ -217,7 +217,7 @@ const RecipeUI = () => {
               <h4>Design Tools</h4>
               <div className="detail-action-links">
                 <a
-                  href="https://www.figma.com/design/LveAt386qre69u3266qLq3/Untitled?node-id=0-1&t=a3XwpDijhqtIIjSW-1"
+                  href="https://www.figma.com/design/0LOpTDIoacRDu73RdAM757/Untitled?t=OB3hhiHrNNoqCFU9-1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="action-link-btn figma-brand"
