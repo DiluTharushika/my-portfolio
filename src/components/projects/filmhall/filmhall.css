@@ -269,3 +269,81 @@
     padding: 25px;
   }
 }
+
+/* ====== Case Study Additions ====== */
+
+/* Case Study Label above title */
+.case-study-label {
+  display: inline-block;
+  background: linear-gradient(90deg, rgba(44, 216, 213, 0.15), rgba(142, 55, 215, 0.15));
+  border: 1px solid rgba(142, 55, 215, 0.3);
+  color: #c084fc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+/* Section number tag */
+.section-number-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(44, 216, 213, 0.2), rgba(142, 55, 215, 0.3));
+  border: 1px solid rgba(142, 55, 215, 0.35);
+  color: #c084fc;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* Problem list icons */
+.problem-icon,
+.solution-icon {
+  margin-right: 8px;
+  font-style: normal;
+}
+
+/* Problem section subtle red tint */
+.problem-section {
+  background: rgba(220, 38, 38, 0.04);
+  border: 1px solid rgba(220, 38, 38, 0.12);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-left: -8px;
+}
+
+/* Solution section subtle green tint */
+.solution-section {
+  background: rgba(34, 197, 94, 0.04);
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-left: -8px;
+}
+
+/* Outcome section subtle blue tint */
+.outcome-section {
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-left: -8px;
+}
+
+/* Override existing H3 underline for case study consistency */
+.detail-section h3::after {
+  display: none !important;
+}
+
+.detail-section h3 {
+  color: #2CD8D5 !important;
+}
+
