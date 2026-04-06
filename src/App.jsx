@@ -34,6 +34,7 @@ import Recipeui from "./components/projects/recipeui/recipeui.jsx";
 import Note from "./components/projects/noteapp/noteapp.jsx";
 import Fitmate from "./components/projects/fitmate/fitmate.jsx";
 import Boba from "./components/projects/boba/boba.jsx";
+import SmartWater from "./components/projects/smartwater/smartwater.jsx";
 
 const App = () => {
   return (
@@ -70,6 +71,7 @@ const App = () => {
         <Route path="/recipeui" element={<Recipeui />} />
         <Route path="/fitmate" element={<Fitmate />} />
         <Route path="/boba" element={<Boba />} />
+        <Route path="/water" element={<SmartWater />} />
       </Routes>
     </Router>
   );

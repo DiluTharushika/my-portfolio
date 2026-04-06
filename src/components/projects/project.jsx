@@ -17,8 +17,19 @@ import todoUi from "../../assets/todoui.jpeg";
 import mobileImg2 from "../../assets/noteApp.jpeg";
 import fitmateImg from "../../assets/fitmate-banner.png";
 import bobaImg from "../../assets/boba-poster.png";
+import waterAppImg from "../../assets/waterappimg.png";
 
 const projects = [
+  {
+    title: "Smart Water App",
+    description: "A mobile app designed to help households in Sri Lanka manage and plan water usage during irregular supply schedules.",
+    image: waterAppImg,
+    path: "/water",
+    category: "UI/UX",
+    techs: ["Figma", "UX Case Study", "Research"],
+    isBest: true,
+    isNew: true
+  },
   {
     title: "AI-Powered Recipe App",
     description: "A mobile app that generates personalized recipes and meal plans using AI, tailored to user preferences and dietary needs.",
