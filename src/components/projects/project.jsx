@@ -18,6 +18,7 @@ import mobileImg2 from "../../assets/noteApp.jpeg";
 import fitmateImg from "../../assets/fitmate-banner.png";
 import bobaImg from "../../assets/boba-poster.png";
 import waterAppImg from "../../assets/waterappimg.png";
+import studentMgmtImg from "../../assets/student-mgmt.png";
 
 const projects = [
   {
@@ -133,6 +134,15 @@ const projects = [
     path: "/recipeui",
     category: "UI/UX",
     techs: ["Figma", "Clean UI", "UX Case Study"]
+  },
+  {
+    title: "Student Management System",
+    description: "A Java Swing desktop application with PostgreSQL for managing student records, marks tracking, and academic analytics with full CRUD operations.",
+    image: studentMgmtImg,
+    path: "/studentmgmt",
+    category: "Web",
+    techs: ["Java", "Swing", "PostgreSQL", "JDBC"],
+    isNew: true
   },
 ];
 

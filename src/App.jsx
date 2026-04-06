@@ -35,6 +35,7 @@ import Note from "./components/projects/noteapp/noteapp.jsx";
 import Fitmate from "./components/projects/fitmate/fitmate.jsx";
 import Boba from "./components/projects/boba/boba.jsx";
 import SmartWater from "./components/projects/smartwater/smartwater.jsx";
+import StudentMgmt from "./components/projects/studentmgmt/studentmgmt.jsx";
 
 const App = () => {
   return (
@@ -72,6 +73,7 @@ const App = () => {
         <Route path="/fitmate" element={<Fitmate />} />
         <Route path="/boba" element={<Boba />} />
         <Route path="/water" element={<SmartWater />} />
+        <Route path="/studentmgmt" element={<StudentMgmt />} />
       </Routes>
     </Router>
   );
