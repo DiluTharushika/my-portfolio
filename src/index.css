@@ -1,8 +1,15 @@
+/* ============================================================
+   GLOBAL STYLES — Portfolio Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Global Scroll & Mobile Overrides */
 html {
   overflow-x: hidden;
@@ -17,17 +24,36 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: #050505;
   color: #fff;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Selection Color */
 ::selection {
   background: rgba(44, 216, 213, 0.3);
   color: #fff;
+}
+
+/* Custom Scrollbar - Professional subtle */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2CD8D5, #8E37D7);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00c6ff, #6B8DD6);
 }
 
 /* Mobile-friendly touch targets helper */

@@ -82,28 +82,66 @@
   animation-delay: 0.5s;
 }
 
-/* Download CV Button */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  background: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
-  color: #fff;
-  box-shadow: 0 0 15px rgba(107, 141, 214, 0.6);
-  transition: all 0.3s ease;
+/* CTA Button Group */
+.home-cta-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
   animation: fadeInUp 1.2s ease both;
   animation-delay: 0.9s;
 }
 
-.btn:hover {
-  background: linear-gradient(-225deg, #8E37D7 0%, #6B8DD6 48%, #2CD8D5 100%);
-  /* Flipped gradient for hover */
-  box-shadow: 0 0 25px rgba(44, 216, 213, 0.7);
-  transform: translateY(-2px);
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.home-btn--primary {
+  background: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(107, 141, 214, 0.4);
+  border: 1px solid transparent;
+}
+
+.home-btn--primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(44, 216, 213, 0.6);
+}
+
+.home-btn--secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  border: 1px solid rgba(44, 216, 213, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.home-btn--secondary:hover {
+  background: rgba(44, 216, 213, 0.1);
+  color: #fff;
+  border-color: #2CD8D5;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(44, 216, 213, 0.2);
+}
+
+.home-btn__icon {
+  font-size: 1.15rem;
+}
+
+.home-btn__arrow {
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.home-btn--secondary:hover .home-btn__arrow {
+  transform: translateX(6px);
 }
 
 /* Social Icons */
@@ -324,9 +362,15 @@
     border-radius: 12px;
   }
 
-  .btn {
+  .home-cta-group {
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    text-align: center;
+  }
+
+  .home-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

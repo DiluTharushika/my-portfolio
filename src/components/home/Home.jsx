@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Home.css";
 import homeVideo from "../../assets/homeVideo.mp4";
 import { ReactTyped } from "react-typed";
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaBehance } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaBehance, FaBriefcase, FaFolderOpen, FaArrowRight } from "react-icons/fa";
+import { HashLink as Link } from "react-router-hash-link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SpaceRobot from "./SpaceRobot.jsx";
@@ -36,30 +37,6 @@ const Home = () => {
       }
     };
   }, []);
-
-  const handleDownloadCV = async () => {
-    try {
-      const cvUrl = `${import.meta.env.BASE_URL}DiluTharushika_Resume.pdf`;
-      const response = await fetch(cvUrl);
-
-      if (!response.ok) {
-        alert("CV file is not available on the site.");
-        return;
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "dilutharushika-cv.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      alert("Error downloading the CV.");
-    }
-  };
 
   return (
     <div className="home" id="home" ref={homeRef}>
@@ -99,14 +76,27 @@ const Home = () => {
           scalable architecture, and efficient code.
         </p>
 
-        <button
-          onClick={handleDownloadCV}
-          className="btn cv-button-home"
-          data-aos="flip-left"
-          data-aos-delay="700"
-        >
-          Download CV
-        </button>
+        {/* CTA Buttons */}
+        <div className="home-cta-group" data-aos="fade-up" data-aos-delay="700">
+          <Link
+            smooth
+            to="/#contact"
+            className="home-btn home-btn--primary"
+          >
+            <FaBriefcase className="home-btn__icon" />
+            <span>Hire Me</span>
+          </Link>
+
+          <Link
+            smooth
+            to="/#projects"
+            className="home-btn home-btn--secondary"
+          >
+            <FaFolderOpen className="home-btn__icon" />
+            <span>See My Works</span>
+            <FaArrowRight className="home-btn__arrow" />
+          </Link>
+        </div>
 
         <div className="social-icons">
           <a
